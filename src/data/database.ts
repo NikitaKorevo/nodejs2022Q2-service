@@ -69,4 +69,10 @@ export class Database {
       updatedAt: 1658081646458,
     },
   ];
+
+  favorites: {
+    artists: [];
+    albums: [];
+    tracks: [];
+  };
 }
