@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { Database } from 'src/data/database';
-import { CreateArtistDto } from '../dto/create-artist.dto';
 import { generateUuid } from 'src/utils/generateUuid';
-import { UpdateArtistDto } from '../dto/update-artist.dto';
 import { isEntityByIdExist } from 'src/utils/validation';
+import { CreateArtistDto } from '../dto/create-artist.dto';
+import { UpdateArtistDto } from '../dto/update-artist.dto';
 
 @Injectable()
 export class ArtistsService {
