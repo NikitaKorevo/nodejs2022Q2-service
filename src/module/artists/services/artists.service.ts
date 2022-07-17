@@ -29,13 +29,14 @@ export class ArtistsService {
   }
 
   async updateById(id: string, updateArtistDto: UpdateArtistDto) {
-    const artistIndex = this.database.artists.findIndex((artist) => {
+    const artists = this.database.artists;
+    const artistIndex = artists.findIndex((artist) => {
       return artist.id === id;
     });
 
     isEntityByIdExist(artistIndex);
 
-    const artist = await this.getById(id);
+    const artist = artists[artistIndex];
     const updatedArtist = { ...artist, ...updateArtistDto };
 
     this.database.artists[artistIndex] = updatedArtist;
@@ -43,7 +44,8 @@ export class ArtistsService {
   }
 
   async removeById(id: string) {
-    const artistIndex = this.database.artists.findIndex((artist) => {
+    const artists = this.database.artists;
+    const artistIndex = artists.findIndex((artist) => {
       return artist.id === id;
     });
 

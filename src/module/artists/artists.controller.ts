@@ -10,7 +10,6 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-/* import { isUuidValid } from 'src/utils/validation'; */
 import { CreateArtistDto } from './dto/create-artist.dto';
 import { UpdateArtistDto } from './dto/update-artist.dto';
 import { ArtistsService } from './services/artists.service';
@@ -28,7 +27,6 @@ export class ArtistsController {
   @Get(':id')
   @HttpCode(HttpStatus.OK)
   async getById(@Param('id', new ParseUUIDPipe()) id: string) {
-    /* isUuidValid(id); */
     return this.artistsService.getById(id);
   }
 
@@ -44,14 +42,12 @@ export class ArtistsController {
     @Param('id', new ParseUUIDPipe()) id: string,
     @Body() updateArtistDto: UpdateArtistDto,
   ) {
-    /* isUuidValid(id); */
     return this.artistsService.updateById(id, updateArtistDto);
   }
 
   @HttpCode(204)
   @Delete(':id')
   async removeById(@Param('id', new ParseUUIDPipe()) id: string) {
-    /*  isUuidValid(id); */
     return this.artistsService.removeById(id);
   }
 }
