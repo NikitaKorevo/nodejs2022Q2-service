@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Album } from 'src/module/albums/schemas/album.schema';
 import { Artist } from 'src/module/artists/schemas/artist.schema';
 import { Track } from 'src/module/tracks/schemas/track.schema';
+import { User } from 'src/module/users/schemas/user.schema';
 
 @Injectable()
 export class Database {
@@ -47,6 +48,25 @@ export class Database {
       artistId: null,
       albumId: 'a61452d7-59f5-4967-9446-d88ba53bf5d4',
       duration: 160,
+    },
+  ];
+
+  users: Array<User> = [
+    {
+      id: '88f3f065-798b-4fbe-81bb-e6d53d7ce042',
+      login: 'nikita',
+      password: 'nikita1234',
+      version: 0,
+      createdAt: 1658081449553,
+      updatedAt: 1658081449553,
+    },
+    {
+      id: 'da8763d1-4259-4951-92be-eeb659400b9f',
+      login: 'maxim',
+      password: 'maxim12345',
+      version: 0,
+      createdAt: 1658081646458,
+      updatedAt: 1658081646458,
     },
   ];
 }
