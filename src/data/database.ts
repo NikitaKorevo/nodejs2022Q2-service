@@ -3,6 +3,7 @@ import { Album } from 'src/module/albums/schemas/album.schema';
 import { Artist } from 'src/module/artists/schemas/artist.schema';
 import { Track } from 'src/module/tracks/schemas/track.schema';
 import { User } from 'src/module/users/schemas/user.schema';
+import { Favorite } from 'src/module/favorites/schemas/favorite.schema';
 
 @Injectable()
 export class Database {
@@ -70,9 +71,9 @@ export class Database {
     },
   ];
 
-  favorites: {
-    artists: [];
-    albums: [];
-    tracks: [];
+  favorites: Favorite = {
+    artists: ['a8536a2e-5566-4ab9-8414-e84fec7a0f6e'],
+    albums: ['a61452d7-59f5-4967-9446-d88ba53bf5d4'],
+    tracks: ['d546c4ae-a1ec-4ced-931b-c6b13a83be51'],
   };
 }
